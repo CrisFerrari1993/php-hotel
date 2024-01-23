@@ -54,31 +54,31 @@
                     <table class="table caption-top">
                       <thead>
                         <tr>
-                          <th scope="col">Index</th>
-                          <th scope="col">First</th>
-                          <th scope="col">Last</th>
-                          <th scope="col">Handle</th>
+                          <th scope="col">Hotel Name</th>
+                          <th scope="col">Description</th>
+                          <th scope="col">Parking</th>
+                          <th scope="col">Vote</th>
+                          <th scope="col">Distance to center (Km)</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
+                        <?php
+                        foreach($hotels as $index => $hotel){
+                            if($hotel['parking'] == true){
+                                $hotel['parking'] = 'Yes';
+                            } else {
+                                $hotel['parking'] = 'No';
+                            }
+                            echo 
+                            "<tr>
+                            <th scope='row'>" . $hotel['name'] . "</th>
+                                <td>" . $hotel['description'] . "</td>
+                                <td>" . $hotel['parking'] . "</td>
+                                <td>" . $hotel['vote'] . "</td>
+                                <td>" . $hotel['distance_to_center'] . "</td>
+                            ";
+                        }
+                        ?>
                       </tbody>
                     </table>
                 </div>
