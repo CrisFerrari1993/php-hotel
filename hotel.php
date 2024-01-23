@@ -56,7 +56,7 @@
         <div class="container my-5">
             <div class="row">
                 <form>
-                    <div class="col-12">
+                    <div class="col-12 text-center">
                         <label for="rating">Valutazione</label>
                         <select name="rating">
                             <option value="1">1</option>
@@ -66,16 +66,13 @@
                             <option value="5">5</option>
                         </select>
                         <label for="parking">Parcheggio</label>
-                        <input name="parking" type="radio" value="no">
-                        <label for="no">No</label>
-                        <input name="parking" type="radio" value="yes">
-                        <label for="yes">Yes</label>
+                        <input name="parking" type="checkbox" value="yes">
                         <button type="submit" class="btn btn-primary mx-3">Cerca</button>
                     </div>
                 </form>
             </div>
         </div>
-
+    <!-- Table container -->
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -92,7 +89,7 @@
                       </thead>
                       <tbody>
                         <?php
-                        foreach($hotels as $index => $hotel){
+                        foreach($hotels as $hotel){
                             if(($userParking === null
                             || ($userParking === 'yes' && $hotel['parking'])
                             || ($userParking === 'no' && !$hotel['parking']))
@@ -102,7 +99,7 @@
                              <tr>
                                 <td> <?php echo $hotel['name'] ?> </td>
                                 <td> <?php echo $hotel['description'] ?> </td>
-                                <td class='text-center'> <?php echo $hotel['parking'] ? "yes" : "no" ?> </td>
+                                <td class='text-center'> <?php echo $hotel['parking'] ? "<i style='color : green' class='fa-solid fa-circle-check'></i>" : "<i style='color : red' class='fa-solid fa-circle-xmark'></i>" ?> </td>
                                 <td class='text-center'> <?php echo $hotel['vote'] ?> /5</td>
                                 <td class='text-center'> <?php echo $hotel['distance_to_center'] ?> km</td>
                             </tr>
