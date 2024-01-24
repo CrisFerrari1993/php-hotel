@@ -56,7 +56,7 @@
         <div class="container my-5">
             <div class="row">
                 <form>
-                    <div class="col-12 text-center">
+                    <div class="col-12 ">
                         <label for="rating">Valutazione</label>
                         <select name="rating">
                             <option value="1">1</option>
@@ -65,9 +65,11 @@
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
+                        <br>
                         <label for="parking">Parcheggio</label>
                         <input name="parking" type="checkbox" value="yes">
-                        <button type="submit" class="btn btn-primary mx-3">Cerca</button>
+                        <br>
+                        <button type="submit" class="btn btn-primary my-3">Filtra</button>
                     </div>
                 </form>
             </div>
@@ -80,11 +82,11 @@
                     <table class="table caption-top">
                       <thead>
                         <tr>
-                          <th scope="col">Hotel Name</th>
-                          <th scope="col">Description</th>
-                          <th scope="col">Parking</th>
-                          <th scope="col">Vote</th>
-                          <th scope="col">Distance to center (Km)</th>
+                          <th class='text-center' scope="col">Hotel Name</th>
+                          <th class='text-center' scope="col">Description</th>
+                          <th class='text-center' scope="col">Parking</th>
+                          <th class='text-center' scope="col">Vote</th>
+                          <th class='text-center' scope="col">Distance to center (Km)</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -97,8 +99,8 @@
                         ?>       
 
                              <tr>
-                                <td> <?php echo $hotel['name'] ?> </td>
-                                <td> <?php echo $hotel['description'] ?> </td>
+                                <td class='text-center'> <?php echo $hotel['name'] ?> </td>
+                                <td class='text-center'> <?php echo $hotel['description'] ?> </td>
                                 <td class='text-center'> <?php echo $hotel['parking'] ? "<i style='color : green' class='fa-solid fa-circle-check'></i>" : "<i style='color : red' class='fa-solid fa-circle-xmark'></i>" ?> </td>
                                 <td class='text-center'> <?php echo $hotel['vote'] ?> /5</td>
                                 <td class='text-center'> <?php echo $hotel['distance_to_center'] ?> km</td>
